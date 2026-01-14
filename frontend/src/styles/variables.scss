@@ -1,0 +1,194 @@
+// ============================================================================
+// VARIABLES DE DISEÑO - PODER JUDICIAL DEL PERÚ
+// ============================================================================
+
+// ===== Paleta de Colores Institucional =====
+$pj-brown-grey: #736d5d; // Gris/Marrón institucional
+$pj-red-primary: #8c0d0d; // Rojo principal
+$pj-red-dark: #731414; // Rojo oscuro
+$pj-red-light: #d9a3a3; // Rosa claro
+$pj-grey-light: #f2f2f2; // Gris muy claro
+// $pj-brown-grey: #0dff00; // Gris/Marrón institucional
+// $pj-red-primary: #26ff00; // Rojo principal
+// $pj-red-dark: #00ff1a; // Rojo oscuro
+// $pj-red-light: #09ff00; // Rosa claro
+// $pj-grey-light: #1aff00; // Gris muy claro
+
+// ===== Colores Semánticos =====
+// $color-success: #00ff0d; // Verde para éxito
+// $color-warning: #48ff00; // Naranja para advertencias
+// $color-error: #00ff1e; // Rojo para errores
+// $color-info: #33ff00; // Azul para informació?n
+$color-success: #2e7d32; // Verde para éxito
+$color-warning: #f57c00; // Naranja para advertencias
+$color-error: #c62828; // Rojo para errores
+$color-info: #0277bd; // Azul para información
+
+// ===== Espaciado =====
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+
+// ===== Tipografía =====
+$font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  sans-serif;
+$font-size-xs: 0.65rem; // 10px
+$font-size-sm: 0.75rem; // 12px
+$font-size-base: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ===== Radios de Borde =====
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-full: 9999px;
+
+// ===== Sombras =====
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+// ===== Sombras con colores PJ =====
+$shadow-pj-sm: 0 2px 8px rgba(140, 13, 13, 0.1);
+$shadow-pj-md: 0 6px 16px rgba(140, 13, 13, 0.15);
+$shadow-pj-lg: 0 10px 24px rgba(140, 13, 13, 0.2);
+
+// ===== Transiciones =====
+$transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ===== Z-Index =====
+$z-dropdown: 1000;
+$z-header: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+
+// ===== Breakpoints =====
+$breakpoint-xs: 0;
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1264px;
+$breakpoint-xl: 1904px;
+
+// ===== Mixins =====
+@mixin pj-card {
+  border-radius: $border-radius-md;
+  border: 1px solid rgba($pj-brown-grey, 0.2);
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $pj-red-primary;
+    box-shadow: $shadow-pj-md;
+  }
+}
+
+@mixin pj-button-primary {
+  background-color: $pj-red-primary;
+  color: white;
+  border: none;
+  transition: all $transition-fast;
+
+  &:hover:not(:disabled) {
+    background-color: $pj-red-dark;
+    box-shadow: $shadow-pj-sm;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin pj-button-secondary {
+  background-color: $pj-brown-grey;
+  color: white;
+  border: none;
+  transition: all $transition-fast;
+
+  &:hover:not(:disabled) {
+    background-color: darken($pj-brown-grey, 10%);
+    box-shadow: $shadow-pj-sm;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin scrollbar-pj {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($pj-brown-grey, 0.1);
+    border-radius: $border-radius-sm;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($pj-red-primary, 0.4);
+    border-radius: $border-radius-sm;
+
+    &:hover {
+      background: rgba($pj-red-primary, 0.6);
+    }
+  }
+}
+
+@mixin truncate-text($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == "xs" {
+    @media (max-width: #{$breakpoint-sm - 1}) {
+      @content;
+    }
+  } @else if $breakpoint == "sm" {
+    @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-md - 1}) {
+      @content;
+    }
+  } @else if $breakpoint == "md" {
+    @media (min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-lg - 1}) {
+      @content;
+    }
+  } @else if $breakpoint == "lg" {
+    @media (min-width: #{$breakpoint-lg}) and (max-width: #{$breakpoint-xl - 1}) {
+      @content;
+    }
+  } @else if $breakpoint == "xl" {
+    @media (min-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  }
+}

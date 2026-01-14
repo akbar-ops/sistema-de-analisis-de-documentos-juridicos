@@ -1,0 +1,77 @@
+ 
+ -------------- worker_high@fedora v5.4.0 (opalescent)
+--- ***** ----- 
+-- ******* ---- Linux-6.16.7-200.fc42.x86_64-x86_64-with-glibc2.41 2026-01-06 15:25:59
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         poder_judicial:0x7f0fba7cbf50
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> high_priority    exchange=high_priority(direct) key=high_priority
+                
+
+[tasks]
+  . apps.documents.tasks.compute_bertopic_model
+  . apps.documents.tasks.compute_cluster_graph
+  . apps.documents.tasks.process_document_analysis
+  . apps.documents.tasks.process_document_upload
+  . config.celery.debug_task
+
+[2026-01-06 15:26:00,173: WARNING/MainProcess] /home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2026-01-06 15:26:00,181: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2026-01-06 15:26:00,184: WARNING/MainProcess] /home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2026-01-06 15:26:00,189: INFO/MainProcess] mingle: searching for neighbors
+[2026-01-06 15:26:01,198: INFO/MainProcess] mingle: all alone
+[2026-01-06 15:26:01,210: INFO/MainProcess] worker_high@fedora ready.
+
+Restarting celery worker (/home/vicari/Downloads/PROJECTS/temp_/backend/venv/bin/celery -A config worker -Q high_priority -l info -n worker_high@%h --concurrency=1)
+[2026-01-06 15:45:15,391: CRITICAL/MainProcess] Unrecoverable error: RuntimeError("reentrant call inside <_io.BufferedWriter name='<stdout>'>")
+Traceback (most recent call last):
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/worker/worker.py", line 202, in start
+    self.blueprint.start(self)
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/bootsteps.py", line 365, in start
+    return self.obj.start()
+           ^^^^^^^^^^^^^^^^
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 340, in start
+    blueprint.start(self)
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 746, in start
+    c.loop(*c.loop_args())
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/worker/loops.py", line 97, in asynloop
+    next(loop)
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/kombu/asynchronous/hub.py", line 317, in create_loop
+    events = poll(poll_timeout)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/kombu/utils/eventio.py", line 83, in poll
+    return self._epoll.poll(timeout if timeout is not None else -1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/apps/worker.py", line 347, in restart_worker_sig_handler
+    safe_say(f"Restarting celery worker ({' '.join(sys.argv)})",
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/apps/worker.py", line 81, in safe_say
+    print(f'\n{msg}', file=f, flush=True)
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/apps/worker.py", line 347, in restart_worker_sig_handler
+    safe_say(f"Restarting celery worker ({' '.join(sys.argv)})",
+  File "/home/vicari/Downloads/PROJECTS/python-projects/poder-judicial-project/backup-pj-no-similarity/poder-judicial-docs/backend/venv/lib/python3.12/site-packages/celery/apps/worker.py", line 81, in safe_say
+    print(f'\n{msg}', file=f, flush=True)
+RuntimeError: reentrant call inside <_io.BufferedWriter name='<stdout>'>
+
+worker: Warm shutdown (MainProcess)
+
+Restarting celery worker (/home/vicari/Downloads/PROJECTS/temp_/backend/venv/bin/celery -A config worker -Q high_priority -l info -n worker_high@%h --concurrency=1)

@@ -1,0 +1,42 @@
+services:
+  db:
+    image: ankane/pgvector:latest
+    container_name: vicari_postgres_gemini_db
+    environment:
+      POSTGRES_DB: main_database
+      POSTGRES_USER: vicari
+      POSTGRES_PASSWORD: 41818
+    ports:
+      - "5432:5432"
+    volumes:
+      #- pgdata:/var/lib/postgresql/data
+      #- pgdata_legal:/var/lib/postgresql/data
+      ##- pgdata_cogito:/var/lib/postgresql/data 239 docs
+      #- test_data:/var/lib/postgresql/data
+      - temp__pgdata_noollama:/var/lib/postgresql/data # Last No Ollama
+      # - pg_gemini:/var/lib/postgresql/data # Last No Ollama
+      - ./init-db:/docker-entrypoint-initdb.d # use pgvector extension
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vicari -d main_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+#volumes:
+#pgdata_legal:
+#pgdata: 30docs
+#pgdata_cogito:
+#test_data:
+#pj_db:
+volumes:
+  temp__pgdata_noollama:
+    external: true
+    # name: poder-judicial-docs_pgdata_cogito
+#
+# volumes:
+#   pgdata_noollama:
+#
+
+# volumes:
+# pg_gemini:
+#

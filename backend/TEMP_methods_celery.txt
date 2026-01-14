@@ -1,0 +1,169 @@
+# Métodos actualizados para usar Celery
+
+    @action(detail=False, methods=['post'])
+    def bulk_upload(self, request):
+        """
+        Upload multiple documents at once and queue them for processing.
+        All documents get HIGH PRIORITY in queue.
+        """
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        files = serializer.validated_data['files']
+        analyze_metadata = serializer.validated_data.get('analyze_metadata', False)
+        analyze_summary = serializer.validated_data.get('analyze_summary', False)
+        analyze_persons = serializer.validated_data.get('analyze_persons', False)
+        
+        has_analysis_request = analyze_metadata or analyze_summary or analyze_persons
+        
+        # Prepare analysis parts
+        parts = []
+        if analyze_metadata:
+            parts.append('metadata')
+        if analyze_summary:
+            parts.append('summary')
+        if analyze_persons:
+            parts.append('persons')
+        
+        # Process each file
+        documents = []
+        tasks = []
+        errors = []
+        
+        for file in files:
+            try:
+                # Create document
+                document = Document.objects.create(
+                    file_path=file,
+                    title=file.name,
+                    status=DocumentStatus.PROCESSING
+                )
+                
+                # Create upload task (HIGH PRIORITY)
+                task_id = str(uuid.uuid4())
+                upload_task = DocumentTask.objects.create(
+                    task_id=task_id,
+                    document=document,
+                    task_type=TaskType.UPLOAD,
+                    status=TaskStatus.PENDING,
+                    priority=1 if not has_analysis_request else 3,
+                    progress_message="En cola para procesamiento..."
+                )
+                
+                # Send to Celery
+                process_document_upload.apply_async(
+                    args=[str(document.document_id), task_id],
+                    task_id=task_id,
+                    queue='high_priority' if not has_analysis_request else 'default'
+                )
+                
+                # If analysis requested, create analysis task
+                if has_analysis_request:
+                    analysis_task_id = str(uuid.uuid4())
+                    analysis_task = DocumentTask.objects.create(
+                        task_id=analysis_task_id,
+                        document=document,
+                        task_type=TaskType.ANALYSIS_FULL,
+                        status=TaskStatus.PENDING,
+                        priority=5,
+                        analysis_parts=parts,
+                        progress_message="En cola para análisis..."
+                    )
+                    
+                    process_document_analysis.apply_async(
+                        args=[str(document.document_id), analysis_task_id, parts],
+                        task_id=analysis_task_id,
+                        queue='default'
+                    )
+                    
+                    tasks.append({
+                        'upload': DocumentTaskListSerializer(upload_task).data,
+                        'analysis': DocumentTaskListSerializer(analysis_task).data
+                    })
+                else:
+                    tasks.append({
+                        'upload': DocumentTaskListSerializer(upload_task).data
+                    })
+                
+                documents.append(DocumentSerializer(document).data)
+                logger.info(f"Document queued: {file.name}")
+                
+            except Exception as e:
+                logger.error(f"Error queueing file {file.name}: {e}", exc_info=True)
+                errors.append({
+                    'file': file.name,
+                    'error': str(e)
+                })
+        words = title.split()
+        # if len(words) > 30:
+        #     title = ' '.join(words[:30]) + '...'
+        # if len(words) > 20:
+        #     title = ' '.join(words[:20])
+        return Response({
+            'total_queued': len(documents),
+            'total_errors': len(errors),
+            'documents': documents,
+            'tasks': tasks,
+            'errors': errors,
+            'message': f'{len(documents)} documentos en cola para procesamiento'
+        }, status=status.HTTP_202_ACCEPTED if documents else status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=True, methods=['post'])
+    def analyze(self, request, pk=None):
+        """
+        Queue analysis of specific parts of a document.
+        
+        Body parameters:
+        - parts: List of parts to analyze ['metadata', 'summary', 'persons']
+        """
+        document = self.get_object()
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        parts = serializer.validated_data['parts']
+        
+        if not document.content:
+            return Response(
+                {'error': 'El documento no tiene contenido extraído. Debe procesarse primero.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        try:
+            # Create analysis task
+            task_id = str(uuid.uuid4())
+            analysis_task = DocumentTask.objects.create(
+                task_id=task_id,
+                document=document,
+                task_type=TaskType.ANALYSIS_FULL if len(parts) == 3 else (
+                    TaskType.ANALYSIS_METADATA if parts == ['metadata'] else
+                    TaskType.ANALYSIS_SUMMARY if parts == ['summary'] else
+                    TaskType.ANALYSIS_PERSONS if parts == ['persons'] else
+                    TaskType.ANALYSIS_FULL
+                ),
+                status=TaskStatus.PENDING,
+                priority=5,
+                analysis_parts=parts,
+                progress_message="En cola para análisis..."
+            )
+            
+            # Send to Celery
+            process_document_analysis.apply_async(
+                args=[str(document.document_id), task_id, parts],
+                task_id=task_id,
+                queue='default'
+            )
+            
+            logger.info(f"Analysis queued for document {pk}: {parts}")
+            
+            return Response({
+                'message': 'Análisis en cola',
+                'task': DocumentTaskSerializer(analysis_task).data,
+                'document': DocumentSerializer(document).data
+            }, status=status.HTTP_202_ACCEPTED)
+            
+        except Exception as e:
+            logger.error(f"Error queuing analysis for document {pk}: {e}", exc_info=True)
+            return Response(
+                {'error': f'Error al encolar análisis: {str(e)}'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

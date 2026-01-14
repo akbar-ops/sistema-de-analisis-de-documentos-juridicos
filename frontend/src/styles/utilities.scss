@@ -1,0 +1,130 @@
+// ============================================================================
+// UTILIDADES - CLASES REUTILIZABLES
+// ============================================================================
+@import "./variables.scss";
+
+// ===== Colores de Texto =====
+.text-pj-red {
+  color: $pj-red-primary !important;
+}
+.text-pj-red-dark {
+  color: $pj-red-dark !important;
+}
+.text-pj-red-light {
+  color: $pj-red-light !important;
+}
+.text-pj-grey {
+  color: $pj-brown-grey !important;
+}
+
+// ===== Backgrounds =====
+.bg-pj-red {
+  background-color: $pj-red-primary !important;
+}
+.bg-pj-red-dark {
+  background-color: $pj-red-dark !important;
+}
+.bg-pj-grey {
+  background-color: $pj-brown-grey !important;
+}
+.bg-pj-grey-light {
+  background-color: $pj-grey-light !important;
+}
+
+// ===== Bordes =====
+.border-pj-red {
+  border-color: $pj-red-primary !important;
+}
+.border-pj-grey {
+  border-color: $pj-brown-grey !important;
+}
+
+// ===== Cards =====
+.pj-card {
+  @include pj-card;
+}
+
+.pj-card-elevated {
+  @include pj-card;
+  box-shadow: $shadow-md;
+}
+
+// ===== Botones =====
+.pj-btn-primary {
+  @include pj-button-primary;
+}
+
+.pj-btn-secondary {
+  @include pj-button-secondary;
+}
+
+// ===== Scrollbars =====
+.pj-scrollbar {
+  @include scrollbar-pj;
+}
+
+// ===== Truncado de Texto =====
+.truncate-1 {
+  @include truncate-text(1);
+}
+
+.truncate-2 {
+  @include truncate-text(2);
+}
+
+.truncate-3 {
+  @include truncate-text(3);
+}
+
+// ===== Transiciones =====
+.transition-fast {
+  transition: all $transition-fast;
+}
+
+.transition-base {
+  transition: all $transition-base;
+}
+
+.transition-slow {
+  transition: all $transition-slow;
+}
+
+// ===== Espaciado Consistente =====
+.gap-xs {
+  gap: $spacing-xs;
+}
+.gap-sm {
+  gap: $spacing-sm;
+}
+.gap-md {
+  gap: $spacing-md;
+}
+.gap-lg {
+  gap: $spacing-lg;
+}
+
+// ===== Hover States PJ =====
+.hover-pj-red {
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $pj-red-primary !important;
+  }
+}
+
+.hover-scale {
+  transition: transform $transition-fast;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.hover-lift {
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-pj-md;
+  }
+}
