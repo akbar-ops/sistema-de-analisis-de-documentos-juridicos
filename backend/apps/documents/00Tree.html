@@ -1,0 +1,154 @@
+[01;34m./backend/apps/documents[0m
+│   00Tree.html
+│   admin.py
+│   apps.py
+│   __init__.py
+│   [01;34mmanagement[0m
+│   │   [01;34mcommands[0m
+│   │   ├── bulk_upload_documents.py
+│   │   ├── cleanup_old_categories.py
+│   │   ├── diagnose_writing_assistant.py
+│   │   ├── generate_chunks.py
+│   │   ├── generate_clean_embeddings.py
+│   │   ├── generate_embeddings.py
+│   │   ├── __init__.py
+│   │   ├── migrate_legal_categories.py
+│   │   ├── populate_catalogs.py
+│   │   ├── [01;34m__pycache__[0m
+│   │   ├── rebuild_clusters.py
+│   │   ├── regenerate_chunk_embeddings.py
+│   │   ├── regenerate_chunks_clean.py
+│   │   ├── regenerate_embeddings.py
+│   │   ├── remove_duplicates.py
+│   │   ├── test_writing_assistant.py
+│   │   └── verify_categories.py
+│   ├── __init__.py
+│   └── [01;34m__pycache__[0m
+│       └── __init__.cpython-312.pyc
+├── [01;34mmigrations[0m
+│   ├── 0001_initial.py
+│   ├── 0002_alter_documentperson_options_and_more.py
+│   ├── 0003_document_case_number.py
+│   ├── 0004_rename_person_fields.py
+│   ├── 0005_alter_document_summary_embedding_and_more.py
+│   ├── 0006_remove_document_documents_d_instanc_8f7071_idx_and_more.py
+│   ├── 0007_document_document_date_document_issue_place_and_more.py
+│   ├── 0008_add_enhanced_embedding.py
+│   ├── 0009_add_modular_analysis_status.py
+│   ├── 0010_documenttask.py
+│   ├── 0011_add_title_task_type.py
+│   ├── 0012_add_summarizer_type.py
+│   ├── 0013_clustergraph_clustergraphnode_clustergraphedge_and_more.py
+│   ├── 0014_add_clustering_quality_metrics.py
+│   ├── 0015_add_clean_embedding.py
+│   ├── 0016_alter_document_summarizer_type_and_more.py
+│   ├── 0017_add_bertopic_models.py
+│   ├── 0018_add_clean_chunk_embedding.py
+│   ├── __init__.py
+│   └── [01;34m__pycache__[0m
+│       ├── 0001_initial.cpython-312.pyc
+│       ├── 0002_alter_documentperson_options_and_more.cpython-312.pyc
+│       ├── 0003_document_case_number.cpython-312.pyc
+│       ├── 0004_rename_person_fields.cpython-312.pyc
+│       ├── 0005_alter_document_summary_embedding_and_more.cpython-312.pyc
+│       ├── 0006_remove_document_documents_d_instanc_8f7071_idx_and_more.cpython-312.pyc
+│       ├── 0007_document_document_date_document_issue_place_and_more.cpython-312.pyc
+│       ├── 0008_add_enhanced_embedding.cpython-312.pyc
+│       ├── 0009_add_modular_analysis_status.cpython-312.pyc
+│       ├── 0010_documenttask.cpython-312.pyc
+│       ├── 0011_add_title_task_type.cpython-312.pyc
+│       ├── 0012_add_summarizer_type.cpython-312.pyc
+│       ├── 0013_clustergraph_clustergraphnode_clustergraphedge_and_more.cpython-312.pyc
+│       ├── 0014_add_clustering_quality_metrics.cpython-312.pyc
+│       ├── 0015_add_clean_embedding.cpython-312.pyc
+│       ├── 0016_alter_document_summarizer_type_and_more.cpython-312.pyc
+│       ├── 0017_add_bertopic_models.cpython-312.pyc
+│       ├── 0018_add_clean_chunk_embedding.cpython-312.pyc
+│       ├── 0019_change_embedding_dimensions_3072.cpython-312.pyc
+│       └── __init__.cpython-312.pyc
+├── models.py
+├── pagination.py
+├── [01;34m__pycache__[0m
+│   ├── admin.cpython-312.pyc
+│   ├── apps.cpython-312.pyc
+│   ├── __init__.cpython-312.pyc
+│   ├── __init__.cpython-37.pyc
+│   ├── models.cpython-312.pyc
+│   ├── models.cpython-37.pyc
+│   ├── pagination.cpython-312.pyc
+│   ├── serializers.cpython-312.pyc
+│   ├── tasks.cpython-312.pyc
+│   ├── task_views.cpython-312.pyc
+│   ├── urls.cpython-312.pyc
+│   ├── views.cpython-312.pyc
+│   └── writing_views.cpython-312.pyc
+├── serializers.py
+├── [01;34mservices[0m
+│   ├── bertopic_service_optimized.py
+│   ├── bertopic_service.py
+│   ├── chunk_embedding_service.py
+│   ├── chunking_service.py
+│   ├── clean_embeddings_service.py
+│   ├── clustering_service_new.py
+│   ├── clustering_service.py
+│   ├── constants.py
+│   ├── date_parser.py
+│   ├── document_processing.py
+│   ├── document_summarizer.py
+│   ├── embedding_service.py
+│   ├── header_cleaner_service.py
+│   ├── hierarchical_summarizer.py
+│   ├── __init__.py
+│   ├── metadata_extractor.py
+│   ├── modular_processing.py
+│   ├── [01;34mparsers[0m
+│   │   ├── [01;34m__pycache__[0m
+│   │   └── text_extraction.py
+│   ├── person_extractor.py
+│   ├── [01;34m__pycache__[0m
+│   │   ├── bertopic_service.cpython-312.pyc
+│   │   ├── bertopic_service_optimized.cpython-312.pyc
+│   │   ├── chunk_embedding_service.cpython-312.pyc
+│   │   ├── chunking_service.cpython-312.pyc
+│   │   ├── clean_embeddings_service.cpython-312.pyc
+│   │   ├── clustering_service.cpython-312.pyc
+│   │   ├── clustering_service_new.cpython-312.pyc
+│   │   ├── constants.cpython-312.pyc
+│   │   ├── date_parser.cpython-312.pyc
+│   │   ├── document_processing.cpython-312.pyc
+│   │   ├── document_summarizer.cpython-312.pyc
+│   │   ├── embedding_providers.cpython-312.pyc
+│   │   ├── embedding_service.cpython-312.pyc
+│   │   ├── header_cleaner_service.cpython-312.pyc
+│   │   ├── hierarchical_summarizer.cpython-312.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── metadata_extractor.cpython-312.pyc
+│   │   ├── modular_processing.cpython-312.pyc
+│   │   ├── person_extractor.cpython-312.pyc
+│   │   ├── rag_service.cpython-312.pyc
+│   │   ├── rag_service_v3.cpython-312.pyc
+│   │   ├── rag_service_v4.cpython-312.pyc
+│   │   ├── search_service.cpython-312.pyc
+│   │   ├── section_extractor.cpython-312.pyc
+│   │   ├── similarity_service.cpython-312.pyc
+│   │   ├── title_generator.cpython-312.pyc
+│   │   └── writing_assistant.cpython-312.pyc
+│   ├── rag_service.py
+│   ├── rag_service_v3.py
+│   ├── rag_service_v4.py
+│   ├── search_service.py
+│   ├── section_extractor.py
+│   ├── similarity_service.py
+│   ├── title_generator.py
+│   ├── topic_modeling_service.py
+│   └── writing_assistant.py
+├── Similaridad.ipynb
+├── tasks.py
+├── task_views.py
+├── tests.py
+├── urls.py
+├── usefull_clustering.ipynb
+├── views.py
+└── writing_views.py
+
+12 directories, 140 files

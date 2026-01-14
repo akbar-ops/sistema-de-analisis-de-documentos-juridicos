@@ -8,7 +8,89 @@
   <img src="https://img.shields.io/badge/Ollama-LLM-000000?style=for-the-badge&logo=ollama&logoColor=white" />
 </p>
 
+## 👤 Autor
+
+**JORGE GUILLERMO OLARTE QUISPE**  
+Universidad Nacional del Altiplano  
+Ingeniería de Sistemas
+
+---
+
 Sistema inteligente para análisis, clasificación y búsqueda semántica de documentos jurídicos. Utiliza técnicas avanzadas de NLP, clustering y modelos de lenguaje (LLM) para ayudar a profesionales del derecho a encontrar precedentes, analizar jurisprudencia y redactar documentos.
+
+---
+
+## 🖼️ Galería de Funcionalidades
+
+### 📊 Análisis y Estadísticas
+
+| Estadísticas generales                               |
+| ---------------------------------------------------- |
+| ![](readme-images/estadisticas_archivos_subidos.png) |
+
+| Vista de análisis                       | Vista de análisis                       |
+| --------------------------------------- | --------------------------------------- |
+| ![](readme-images/vista_analisis_0.png) | ![](readme-images/vista_analisis_1.png) |
+
+---
+
+### 🧠 Base de Conocimiento y Clustering
+
+| Base de conocimiento                        |
+| ------------------------------------------- |
+| ![](readme-images/base_de_conocimiento.png) |
+
+| Clustering BERTopic                        | Cluster Penal                        |
+| ------------------------------------------ | ------------------------------------ |
+| ![](readme-images/bertopic_clustering.png) | ![](readme-images/cluster_penal.png) |
+
+| Cluster contencioso administrativo                                               |
+| -------------------------------------------------------------------------------- |
+| ![](readme-images/bertopic_clustering_cluster_12_contencioso_administrativo.png) |
+
+---
+
+### 🔍 Búsqueda Semántica
+
+| Búsqueda por clusters                                | Búsqueda por clusters                                  |
+| ---------------------------------------------------- | ------------------------------------------------------ |
+| ![](readme-images/busqueda_query_vista_clusters.png) | ![](readme-images/busqueda_query_vista_clusters_2.png) |
+
+---
+
+### 💬 Chat Inteligente y RAG
+
+| Chat con documento                           | Chat RAG con documento                           |
+| -------------------------------------------- | ------------------------------------------------ |
+| ![](readme-images/chatbot_con_documento.png) | ![](readme-images/chatbot_rag_con_documento.png) |
+
+| Análisis del chat con clusters similares                                |
+| ----------------------------------------------------------------------- |
+| ![](readme-images/vista_analisis_chatbot_keywordscluster_similares.png) |
+
+---
+
+### ✍️ Asistente de Redacción y Resúmenes
+
+| Asistente de redacción                           |
+| ------------------------------------------------ |
+| ![](readme-images/vista_asistente_redaccion.png) |
+
+| Generación de resumen                            | Resultado del resumen                               |
+| ------------------------------------------------ | --------------------------------------------------- |
+| ![](readme-images/generacion_resumen_ollama.png) | ![](readme-images/resultado_generacion_resumen.png) |
+
+| Resultado final del resumen                           |
+| ----------------------------------------------------- |
+| ![](readme-images/resultado_generacion_resumen_2.png) |
+
+---
+
+### ⚙️ Procesamiento y Seguimiento (Ollama)
+
+| Análisis Ollama                        | Historial de procesamiento                            |
+| -------------------------------------- | ----------------------------------------------------- |
+| ![](readme-images/analisis_ollama.png) | ![](readme-images/historial_procesamiento_ollama.png) |
 
 ---
 
