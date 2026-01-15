@@ -24,73 +24,64 @@ Sistema inteligente para análisis, clasificación y búsqueda semántica de doc
 
 ### 📊 Análisis y Estadísticas
 
-| Estadísticas generales                               |
-| ---------------------------------------------------- |
-| ![](readme-images/estadisticas_archivos_subidos.png) |
-
-| Vista de análisis                       | Vista de análisis                       |
-| --------------------------------------- | --------------------------------------- |
-| ![](readme-images/vista_analisis_0.png) | ![](readme-images/vista_analisis_1.png) |
+| Funcionalidad                       | Vista                                                |
+| ----------------------------------- | ---------------------------------------------------- |
+| Estadísticas de archivos procesados | ![](readme-images/estadisticas_archivos_subidos.png) |
+| Análisis general de documentos      | ![](readme-images/vista_analisis_0.png)              |
+| Análisis detallado por métricas     | ![](readme-images/vista_analisis_1.png)              |
 
 ---
 
 ### 🧠 Base de Conocimiento y Clustering
 
-| Base de conocimiento                        |
-| ------------------------------------------- |
-| ![](readme-images/base_de_conocimiento.png) |
-
-| Clustering BERTopic                        | Cluster Penal                        |
-| ------------------------------------------ | ------------------------------------ |
-| ![](readme-images/bertopic_clustering.png) | ![](readme-images/cluster_penal.png) |
-
-| Cluster contencioso administrativo                                               |
-| -------------------------------------------------------------------------------- |
-| ![](readme-images/bertopic_clustering_cluster_12_contencioso_administrativo.png) |
+| Funcionalidad                             | Vista                                                                            |
+| ----------------------------------------- | -------------------------------------------------------------------------------- |
+| Base de conocimiento jurídica             | ![](readme-images/base_de_conocimiento.png)                                      |
+| Clustering de documentos (BERTopic)       | ![](readme-images/bertopic_clustering.png)                                       |
+| Cluster del área penal                    | ![](readme-images/cluster_penal.png)                                             |
+| Cluster contencioso administrativo        | ![](readme-images/bertopic_clustering_cluster_12_contencioso_administrativo.png) |
+| Documento seleccionado dentro del cluster | ![](readme-images/cluster_modal_documento_seleccionado.png)                      |
 
 ---
 
-### 🔍 Búsqueda Semántica
+### 🔍 Búsqueda y Comparación Semántica
 
-| Búsqueda por clusters                                | Búsqueda por clusters                                  |
-| ---------------------------------------------------- | ------------------------------------------------------ |
-| ![](readme-images/busqueda_query_vista_clusters.png) | ![](readme-images/busqueda_query_vista_clusters_2.png) |
+| Funcionalidad                          | Vista                                                  |
+| -------------------------------------- | ------------------------------------------------------ |
+| Búsqueda semántica por clusters        | ![](readme-images/busqueda_query_vista_clusters.png)   |
+| Vista alternativa de resultados        | ![](readme-images/busqueda_query_vista_clusters_2.png) |
+| Panel de documentos similares          | ![](readme-images/doc_similares_sidebar.png)           |
+| Comparación semántica entre documentos | ![](readme-images/comparacion_documentos.png)          |
 
 ---
 
 ### 💬 Chat Inteligente y RAG
 
-| Chat con documento                           | Chat RAG con documento                           |
-| -------------------------------------------- | ------------------------------------------------ |
-| ![](readme-images/chatbot_con_documento.png) | ![](readme-images/chatbot_rag_con_documento.png) |
-
-| Análisis del chat con clusters similares                                |
-| ----------------------------------------------------------------------- |
-| ![](readme-images/vista_analisis_chatbot_keywordscluster_similares.png) |
+| Funcionalidad                            | Vista                                                                   |
+| ---------------------------------------- | ----------------------------------------------------------------------- |
+| Chat con documento seleccionado          | ![](readme-images/chatbot_con_documento.png)                            |
+| Chat con RAG y contexto documental       | ![](readme-images/chatbot_rag_con_documento.png)                        |
+| Análisis del chat con clusters similares | ![](readme-images/vista_analisis_chatbot_keywordscluster_similares.png) |
 
 ---
 
 ### ✍️ Asistente de Redacción y Resúmenes
 
-| Asistente de redacción                           |
-| ------------------------------------------------ |
-| ![](readme-images/vista_asistente_redaccion.png) |
-
-| Generación de resumen                            | Resultado del resumen                               |
-| ------------------------------------------------ | --------------------------------------------------- |
-| ![](readme-images/generacion_resumen_ollama.png) | ![](readme-images/resultado_generacion_resumen.png) |
-
-| Resultado final del resumen                           |
-| ----------------------------------------------------- |
-| ![](readme-images/resultado_generacion_resumen_2.png) |
+| Funcionalidad                   | Vista                                                 |
+| ------------------------------- | ----------------------------------------------------- |
+| Asistente de redacción jurídica | ![](readme-images/vista_asistente_redaccion.png)      |
+| Generación de resumen con LLM   | ![](readme-images/generacion_resumen_ollama.png)      |
+| Resultado del resumen generado  | ![](readme-images/resultado_generacion_resumen.png)   |
+| Resultado final optimizado      | ![](readme-images/resultado_generacion_resumen_2.png) |
 
 ---
 
 ### ⚙️ Procesamiento y Seguimiento (Ollama)
 
-| Análisis Ollama                        | Historial de procesamiento                            |
-| -------------------------------------- | ----------------------------------------------------- |
-| ![](readme-images/analisis_ollama.png) | ![](readme-images/historial_procesamiento_ollama.png) |
+| Funcionalidad                        | Vista                                                 |
+| ------------------------------------ | ----------------------------------------------------- |
+| Análisis de procesamiento con Ollama | ![](readme-images/analisis_ollama.png)                |
+| Historial de tareas procesadas       | ![](readme-images/historial_procesamiento_ollama.png) |
 
 ---
 
